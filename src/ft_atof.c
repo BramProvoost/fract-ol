@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/15 15:51:53 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/09/15 18:32:01 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/09/19 14:04:24 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int	get_precision(const char *str)
 	int	precicion;
 
 	precicion = 0;
-	while (ft_isdigit(*str))
+	while (*str && ft_isdigit(*str))
 		str++;
 	if (*str != '.')
 		return (precicion);
 	str++;
-	while (ft_isdigit(*str))
+	while (*str && ft_isdigit(*str))
 	{
 		str++;
 		precicion++;
@@ -45,30 +45,17 @@ double	set_dot_and_sign(double nbr, int precision, int neg)
 	return (nbr);
 }
 
-int	basic_atoi(char *str)
-{
-	int	nbr;
-
-	nbr = 0;
-	while (ft_isdigit(*str))
-	{
-		nbr = nbr * 10 + (*str - '0');
-		str++;
-	}
-	return (nbr);
-}
-
 double	ft_atof(const char *str)
 {
 	double	nbr;
 	char	neg;
 	int		precision;
 
-	neg = (*str == '-');
+	neg = (*str && *str == '-');
 	if (*str == '-' || *str == '+')
 		str++;
 	nbr = 0.0;
-	while (ft_isdigit(*str))
+	while (*str && ft_isdigit(*str))
 	{
 		nbr = nbr * 10 + (*str - '0');
 		str++;
@@ -77,7 +64,7 @@ double	ft_atof(const char *str)
 	if (*str == '.')
 	{
 		str++;
-		while (ft_isdigit(*str))
+		while (*str && ft_isdigit(*str))
 		{
 			nbr = nbr * 10 + (*str - '0');
 			str++;

@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/08 15:41:35 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/09/15 18:54:48 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/09/19 10:23:42 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	get_color(int iteration, int max_iterations)
 {
 	if (iteration == max_iterations)
 		iteration = 0;
-	return (get_rgba(iteration * 2, iteration * 8, iteration * 4, 255));
+	return (get_rgba(iteration * 4, iteration * 6, iteration * 2, 255));
 }
 
 void	draw_fractol(t_data *data)

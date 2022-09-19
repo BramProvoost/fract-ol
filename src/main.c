@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/07 14:04:08 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/09/15 19:45:13 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/09/19 14:10:59 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,37 @@ int	show_usage(t_fractol_table *fractol)
 	return (1);
 }
 
+int	str_is_double(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (!(ft_isdigit(str[i]) || str[i] == '.' || str[i] == '-'))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int	is_unvalid_input(int argc, char **argv, t_data *data)
 {
-	int	index;
+	int	i;
 
 	if (argc < 2 || !argv)
 		return (show_usage(data->fractol));
-	else if (argc == 4)
+	if (argc == 4)
 	{
-		printf("cx:cy %f:%f\n", ft_atof(argv[2]), ft_atof(argv[3]));
+		if (!str_is_double(argv[2]) || !str_is_double(argv[3]))
+			return (show_usage(data->fractol));
 	}
-	index = 0;
-	while (data->fractol[index].names)
+	i = 0;
+	while (data->fractol[i].names)
 	{
-		if (ft_strncmp(data->fractol[index].names, argv[1], 100) == 0)
+		if (ft_strncmp(data->fractol[i].names, argv[1], 100) == 0)
 			return (0);
-		index++;
+		i++;
 	}
 	return (show_usage(data->fractol));
 }
@@ -62,7 +77,7 @@ void	init_fractols(t_data *data)
 	data->fractol = fractol;
 	data->vars.move_x = 0;
 	data->vars.move_y = 0;
-	data->vars.max = 64;
+	data->vars.max = 50;
 	data->vars.zoom = 1;
 	data->vars.cx = 0;
 	data->vars.cy = 0;
@@ -88,6 +103,8 @@ int	main(int argc, char **argv)
 	t_data	*data;
 
 	data = malloc(sizeof(t_data));
+	if (!data)
+		exit (EXIT_SUCCESS);
 	init_fractols(data);
 	if (is_unvalid_input(argc, argv, data))
 		exit (EXIT_FAILURE);
