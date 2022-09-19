@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/07 14:04:08 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/09/19 14:30:43 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/09/19 14:32:54 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	is_unvalid_input(int argc, char **argv, t_data *data)
 {
 	int	i;
 
-	if (argc < 2 || !argv)
+	if (argc < 2 || argc == 3 || argc > 4 || !argv)
 		return (show_usage(data->fractol));
 	if (argc == 4)
 	{
