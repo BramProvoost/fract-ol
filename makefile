@@ -5,7 +5,8 @@ SRCFILES	= main.c \
 			  julia.c \
 			  mandelbrot.c \
 			  ft_atof.c \
-			  hooks.c
+			  hooks.c \
+			  str_is_double.c
 LIBFT		= lib/libft/libft.a
 MLX42		= lib/MLX42/libmlx42.a
 

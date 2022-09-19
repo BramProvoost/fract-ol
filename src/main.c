@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/07 14:04:08 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/09/19 14:10:59 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/09/19 14:21:42 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,6 @@ int	show_usage(t_fractol_table *fractol)
 		ft_putstr_fd(fractol[index].usage, 1);
 		ft_putstr_fd("\n", 1);
 		index++;
-	}
-	return (1);
-}
-
-int	str_is_double(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (!(ft_isdigit(str[i]) || str[i] == '.' || str[i] == '-'))
-			return (0);
-		i++;
 	}
 	return (1);
 }

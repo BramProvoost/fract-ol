@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/15 20:14:31 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/09/15 20:14:38 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/09/19 14:25:43 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ int			julia_pixel(t_fractol_vars vars);
 void		loop_screen_actions(t_data *data);
 void		draw_fractol(t_data *data);
 double		ft_atof(const char *str);
+int			str_is_double(char *str);
 
 #endif
