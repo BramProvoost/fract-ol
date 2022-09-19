@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/15 20:14:31 by bprovoos      #+#    #+#                 */
-/*   Updated: 2022/09/19 14:25:43 by bprovoos      ########   odam.nl         */
+/*   Updated: 2022/09/19 17:58:42 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ typedef struct s_fractol_vars
 {
 	int		i_x;
 	int		i_y;
-	int		mouse_x;
-	int		mouse_y;
 	int		max;
 	double	zoom;
 	double	move_x;
