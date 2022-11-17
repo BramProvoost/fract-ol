@@ -14,7 +14,7 @@ VPATH		= src : \
 			  lib/MLX42/src
 OBJDIR		= obj
 
-OBJ			= $(addprefix obj/, $(SRCFILES:.c=.o))
+OBJ			= $(addprefix $(OBJDIR)/, $(SRCFILES:.c=.o))
 INC			= $(addprefix -I , \
 			  lib/libft \
 			  lib/MLX42/include/MLX42)
